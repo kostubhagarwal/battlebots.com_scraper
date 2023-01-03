@@ -1,3 +1,3 @@
 # battlebots.com_scraper
 
-all the sponsors supporting the battlebots who participated in the World Championship VII.
+a list of sponsors who supported participants in the BattleBots World Championship VII.
