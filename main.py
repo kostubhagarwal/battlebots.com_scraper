@@ -37,7 +37,7 @@ with open('data.csv', 'w', newline='') as file:
             sponsors = items[10]
             for sponsor in sponsors.find_all('a'):
                 link = sponsor.get('href')
-                writer.writerow([link])
+                writer.writerow(['{},'.format(link)])
 
             # website = items[12].h3
 
