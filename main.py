@@ -8,6 +8,7 @@ soup_1 = BeautifulSoup(page_1.content, 'lxml')
 
 with open('data.csv', 'w', newline='') as file:
     writer = csv.writer(file, delimiter=',')
+    writer.writerow([','])
 
     for header in soup_1.find_all('h4', class_='title'):
         team = header.text
@@ -37,9 +38,10 @@ with open('data.csv', 'w', newline='') as file:
             sponsors = items[10]
             for sponsor in sponsors.find_all('a'):
                 link = sponsor.get('href')
-                writer.writerow(['{},'.format(link)])
+                writer.writerow([link])
 
             # website = items[12].h3
+
 
 
 
