@@ -9,7 +9,7 @@ input = []
 
 with open('data.csv', 'w', newline='') as file:
     writer = csv.writer(file, delimiter=',')
-    # writer.writerow([','])
+    writer.writerow([','])
 
     for header in soup_1.find_all('h4', class_='title'):
         team = header.text
