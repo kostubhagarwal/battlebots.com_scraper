@@ -42,10 +42,11 @@ with open('data.csv', 'w', newline='') as file:
 
     input = set(input)
     input = list(input)
-    writer = csv.writer(file)
-    writer.writerow(input)
 
-            # website = items[12].h3
+    for item in input:
+        writer.writerow([item])
+    
+             # website = items[12].h3
 
 
 
