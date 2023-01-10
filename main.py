@@ -5,10 +5,11 @@ from bs4 import BeautifulSoup
 url_1 = "https://battlebots.com/world-championship-vii-robots/"
 page_1 = requests.get(url_1)
 soup_1 = BeautifulSoup(page_1.content, 'lxml')
+input = []
 
 with open('data.csv', 'w', newline='') as file:
     writer = csv.writer(file, delimiter=',')
-    writer.writerow([','])
+    # writer.writerow([','])
 
     for header in soup_1.find_all('h4', class_='title'):
         team = header.text
@@ -37,8 +38,12 @@ with open('data.csv', 'w', newline='') as file:
         
             sponsors = items[10]
             for sponsor in sponsors.find_all('a'):
-                link = sponsor.get('href')
-                writer.writerow([link])
+                input.append(sponsor.get('href'))
+
+    input = set(input)
+    input = list(input)
+    writer = csv.writer(file)
+    writer.writerow(input)
 
             # website = items[12].h3
 
